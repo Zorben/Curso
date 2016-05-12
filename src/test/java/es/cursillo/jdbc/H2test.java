@@ -1,5 +1,7 @@
 package es.cursillo.jdbc;
 
+import java.sql.SQLException;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,8 +15,9 @@ public class H2test {
 	}
 
 	@Test
-	public void Connectiontest() {
+	public void Connectiontest() throws SQLException {
 		con.connect();
+		con.executeSql("asd");
 		Assert.assertTrue(con.isConnected());
 	}
 
